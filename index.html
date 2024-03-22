@@ -9,8 +9,37 @@
   </head>
   <body>
     <div id="main">
-      <h1>Script Test</h1>
+      <h1>Gratuitous Animation</h1>
+      <svg
+        viewBox="0 0 15 7"
+        xmlns="http://www.w3.org/2000/svg"
+        style="stroke-width: 0.01px; stroke: blue"
+      >
+        <g id="background"></g>
+        <g>
+          <text x="1" y="2" class="noBorder">Philip</text>
+          <text x="1" y="4" class="addBorder">Philip</text>
+          <text x="1" y="6" class="addBorder">Philip</text>
+          <text x="1" y="6" class="noBorder">Philip</text>
+        </g>
+      </svg>
+      <p>
+        I made this with SVG and the JavaScript animation API. You will learn to
+        do this, but not yet. This document will show you how to install modern
+        JavaScript programming tools. You're just a few minutes away from
+        writing and running your own code.
+      </p>
+      <h2>Script Test</h2>
       <div id="testResult">😞 😒 😫 😖</div>
+      <p>
+        Hello world, my name is
+        <span
+          class="highlight"
+          id="insertNameHere"
+          data-comment="Using TypeScript‼"
+          >«See assignment #1 for details.»</span
+        >!
+      </p>
       <h1>Purpose & Background</h1>
       <p>
         The JavaScript ecosystem has become so complicated. Even if you know the
@@ -18,19 +47,239 @@
         and libraries.
       </p>
       <p>
-        This document will get you set up with a <span class="highlight">minimum</span> set of reasonable
-        tools. And it will set you up with a template for a <span class="highlight">minimum</span> project.
-        This is a good starting point for installing more tools and libraries.
+        This document will get you set up with a
+        <span class="highlight">minimum</span> reasonable set of tools. And it
+        will set you up with a template for a
+        <span class="highlight">minimum</span> project. This is a perfect
+        starting place for a new projects. And if you need to install more tools
+        and libraries, you'll be all ready for that.
       </p>
       <h1>Tools</h1>
+      <p>Install these once per computer.</p>
+      <p>
+        Some of these instructions look oddly specific because I've added small
+        notes where I've gotten stuck before.
+      </p>
       <h2>VS Code</h2>
-      <h3>Extensions</h3>
-      add prettier — any time it asks me which formatter to use, I pick the one with “prettier” in the name.
-      <h1>Source</h1>
-      <a href="https://github.com/TradeIdeasPhilip/bounce-3d?tab=readme-ov-file#starting-from-scratch">https://github.com/TradeIdeasPhilip/bounce-3d?tab=readme-ov-file#starting-from-scratch</a>
-      <p>Need to add https://github.com/Rich-Harris/degit and a template to go with it!</p>
-      <h1>Snoopy Says</h1>
-      It was a dark and stormy night...
+      <p>
+        There are a lot of useful extensions and such that work with VS Code.
+        It's the only editor I use for web stuff.
+      </p>
+      <h3>Install and Configure</h3>
+      <ul>
+        <li>
+          Download from
+          <a href="https://code.visualstudio.com/download">here</a>.
+        </li>
+        <li>
+          Install the following extensions:
+          <ul>
+            <li>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
+                >Code Spell Checker</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next"
+                >JavaScript and TypeScript Nightly</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=antfu.vite"
+                >Vite</a
+              >
+              (The Anthony Fu version.)
+            </li>
+            <li>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+                >Prettier</a
+              >
+              (Any time VS Code asks me which formatter to use, I pick the one
+              with ❝prettier❞ in the name.)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Main menu > Code > Preferences > Settings. Search for git
+          <code>autofetch</code> and set it to true.
+        </li>
+      </ul>
+      <h2>git</h2>
+      <p>
+        You do not need to be an expert in
+        <a href="https://git-scm.com/">git</a>, but you will need the
+        <code>git</code> command line tools to follow these and other
+        directions.
+      </p>
+      <h3>Install</h3>
+      <p>
+        On my Mac I started from the terminal and typed <code>git</code>. I
+        clicked OK a few times and eventually an installer came up and did its
+        job.
+      </p>
+      <h3>Configure</h3>
+      <p>
+        Type the next couple of lines at the terminal. Use your own name and
+        email. These will be recorded as part of every commit.
+      </p>
+      <div>
+        <code
+          >git config --global user.name "<span class="redacted">John Doe</span
+          >"</code
+        >
+      </div>
+      <div>
+        <code
+          >git config --global user.email
+          <span class="redacted">johndoe</span>@<span class="redacted"
+            >example</span
+          >.<span class="redacted">com</span></code
+        >
+      </div>
+      <p>
+        The following is not strictly required, but I like to type
+        <code>git plog</code>. ❝P❞ is for ❝Philip❞.
+      </p>
+      <div>
+        <code
+          >git config --global alias.plog 'log --graph --oneline --all
+          --decorate'</code
+        >
+      </div>
+
+      <h2>npm and Node</h2>
+      <p>
+        <a href="https://www.npmjs.com/">npm</a> is the hub for JavaScript
+        libraries and tools. Initially I tried to avoid it because it was so big
+        and complicated, but <code>npm</code> is
+        <span class="highlight">essential</span>. Some tools and libraries are
+        available multiple ways, but I always recommend using
+        <code>npm</code> if you get the choice.
+      </p>
+      <p>
+        <code>npm</code> stands for Node
+        <span class="highlight">Package</span> Manager. The program you're about
+        to write is a <span class="highlight">package</span>. Each library you
+        want to use is a <span class="highlight">package</span>. A lot of your
+        development tools are <span class="highlight">packages</span>.
+        <code>npm</code> is a repository for
+        <span class="highlight">packages</span> and a tool for downloading,
+        installing, building, testing and otherwise manipulating
+        <span class="highlight">packages</span>.
+      </p>
+      <p>
+        <code>npm</code> works well with <code>git</code> and a lot of other
+        relevant tools. I use <code>npm</code> as part of my normal build and
+        test processes.
+      </p>
+      <h3>Install</h3>
+      <p>
+        This process changes frequently. Check Google for more recent
+        information.
+      </p>
+      <p>
+        I used
+        <a href="https://github.com/nvm-sh/nvm#installing-and-updating">NVM</a>
+        to install <code>npm</code> and Node. I started with the instructions on
+        the NVM website then I fixed a few things. This is what I did last time:
+      </p>
+      <p>
+        At the terminal type <code>cd ; touch .zshrc .profile</code>. The
+        install program should add things to both of these scripts. If you try
+        to do a build and it can't find a command, check these scripts.
+      </p>
+      <p>
+        At the terminal type
+        <code
+          >curl -o-
+          https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh |
+          bash</code
+        >
+        to install NVM.
+      </p>
+      <p>
+        Close that terminal window and start a new one. Type
+        <code>nvm install node</code> to install Node and npm.
+      </p>
+      <h2>TypeScript</h2>
+      <p>
+        If you don't know TypeScript, learn it. It gives you all of the nice
+        safety features of C++/Java/C#, but without breaking any of the nice
+        parts of JavaScript. I never use plain JavaScript if I can help it.
+      </p>
+      <p>
+        Open a terminal window. Make sure you are not inside an
+        <code>npm</code> project. (Otherwise you will eventually get the ❝This
+        is not the tsc command you are looking for❞ error with the oversized red
+        background.) Type <code>npm install -g typescript</code>.
+      </p>
+
+      <h2>GitHub</h2>
+      <p>
+        You don't need a GitHub account to use these tools. But if you have a
+        GitHub account and you are installing dev tools on a new computer you
+        probably want to do this. This lets tools on your computer access your
+        GitHub account without asking for your password each time.
+      </p>
+      <p>
+        At the terminal type <code>ssh-keygen</code> and take all the defaults.
+        This will create a new pair of cryptographic keys.
+      </p>
+      <p>
+        Type <code>cat ~/.ssh/id_rsa.pub</code> to display your new public key.
+      </p>
+      <p>
+        Go to
+        <a href="https://github.com/settings/keys"
+          >https://github.com/settings/keys</a
+        >
+        and add your new public key.
+      </p>
+      <h1>Try It!</h1>
+      <h2>git clone</h2>
+      <h2>degit template</h2>
+      <h2>npm create</h2>
+      <h1>About This Document</h1>
+      <h2>Source Code</h2>
+      <p>
+        See my
+        <a href="https://github.com/TradeIdeasPhilip/typescript-getting-started"
+          >GitHub repository</a
+        >
+        for the source code for this document. This document was created using
+        the tools I've described here, and serves as an example of my process.
+      </p>
+      <h2>Source Materials</h2>
+      <a
+        href="https://github.com/TradeIdeasPhilip/bounce-3d?tab=readme-ov-file#starting-from-scratch"
+        >https://github.com/TradeIdeasPhilip/bounce-3d?tab=readme-ov-file#starting-from-scratch</a
+      >
+      <p>
+        Need to add https://github.com/Rich-Harris/degit and a template to go
+        with it!
+      </p>
+      <p>Ignore the sub module stuff. It's done better now</p>
+      <h2>Fonts</h2>
+      <p style="font-family: 'Peralta'">
+        <a href="https://fonts.google.com/specimen/Peralta">Peralta</a> is
+        readable and fun, perfect for headers.
+      </p>
+      <p style="font-family: 'New Tegomin'">
+        <a href="https://fonts.google.com/specimen/New+Tegomin">New Tegomin</a>
+        reminds me of Snoopy: It was a dark and stormy night...&nbsp; Mostly I
+        love it, but I'm not crazy about the "normal" quotes or the “smart”
+        quotes.
+      </p>
+      <p style="font-family: 'Redacted Script'">
+        <a href="https://fonts.google.com/specimen/Redacted+Script"
+          >Redacted Script</a
+        >
+        always brings a smile to my face.
+      </p>
     </div>
   </body>
 </html>

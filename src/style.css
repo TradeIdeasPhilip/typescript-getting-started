@@ -1,6 +1,7 @@
 /* https://fonts.google.com/ */
 @import url("https://fonts.googleapis.com/css2?family=Peralta&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap");
 
 :root {
   font-family: "New Tegomin", monospace;
@@ -35,4 +36,30 @@ p {
 .highlight {
   font-style: italic;
   text-decoration: underline;
+}
+
+code {
+  background-color: lightblue;
+  border-radius: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  color: blue;
+}
+
+svg {
+  font-size: 1px;
+  fill: whitesmoke;
+}
+.addBorderDisabled {
+  stroke-width: 0.02px;
+  stroke: blue;
+}
+
+.noBorder {
+  stroke: none;
+  stroke-width: 0;
+}
+
+.redacted {
+  font-family: "Redacted Script", cursive;
 }
