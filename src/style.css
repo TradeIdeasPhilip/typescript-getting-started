@@ -30,17 +30,17 @@ h6 {
   font-family: "Peralta", fantasy;
 }
 h1::before {
-  content: "⭑⭑⭑";
+  content: "¶ ¶ ¶";
   float: right;
   padding-left: 0.25em;
 }
 h2::before {
-  content: "⭑⭑";
+  content: "¶ ¶";
   float: right;
   padding-left: 0.25em;
 }
 h3::before {
-  content: "⭑";
+  content: "¶";
   float: right;
   padding-left: 0.25em;
 }
