@@ -4,30 +4,36 @@
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌎 TypeScript Getting Started 2024</title>
+    <title>🌎 TypeScript • Getting Started 2024</title>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
     <div id="main">
+      <div class="main-title">TypeScript / JavaScript Quickstart Guide</div>
       <h1>Gratuitous Animation</h1>
-      <svg
-        viewBox="0 0 15 7"
-        xmlns="http://www.w3.org/2000/svg"
-        style="stroke-width: 0.01px; stroke: blue"
-      >
-        <g id="background"></g>
-        <g>
-          <text x="1" y="2" class="noBorder">Philip</text>
-          <text x="1" y="4" class="addBorder">Philip</text>
-          <text x="1" y="6" class="addBorder">Philip</text>
-          <text x="1" y="6" class="noBorder">Philip</text>
-        </g>
-      </svg>
+      <div class="svg-holder">
+        <svg
+          viewBox="0 0 8.5 7.5"
+          xmlns="http://www.w3.org/2000/svg"
+          style="stroke-width: 0.01px; stroke: blue"
+        >
+          <g id="background"></g>
+          <g class="text-container">
+            <text x="1" y="2" class="no-border">Philip</text>
+            <text x="1" y="4" class="traditional-border">Philip</text>
+            <text x="1" y="6" class="thick-border">Philip</text>
+            <text x="1" y="6" class="no-border">Philip</text>
+            <text x="5" y="3" class="no-border" style="fill: blue">Philip</text>
+            <text x="5" y="5" class="no-border animated-color">Philip</text>
+            <text x="5" y="7" class="no-border text-shadow">Philip</text>
+          </g>
+        </svg>
+      </div>
       <p>
-        I made this with SVG and the JavaScript animation API. You will learn to
-        do this, but not yet. This document will show you how to install modern
-        JavaScript programming tools. You're just a few minutes away from
-        writing and running your own code.
+        I made this with SVG and the JavaScript animation API. You can do this
+        yourself, but not until you set up your tools. This document will show
+        you how to install modern JavaScript programming tools. You're just a
+        few minutes away from writing and running your own code.
       </p>
       <h2>Script Test</h2>
       <div id="testResult">😞 😒 😫 😖</div>
@@ -54,10 +60,14 @@
         starting place for a new projects. And if you need to install more tools
         and libraries, you'll be all ready for that.
       </p>
-      <h1>Tools</h1>
+      <p>
+        There are viable alternatives to most of these tools. However, I
+        recommend you start here before you explore on your own.
+      </p>
+      <h1>My Tools</h1>
       <p>Install these once per computer.</p>
       <p>
-        Some of these instructions look oddly specific because I've added small
+        Some of these instructions look oddly specific; I've added detailed
         notes where I've gotten stuck before.
       </p>
       <h2>VS Code</h2>
@@ -104,7 +114,7 @@
           </ul>
         </li>
         <li>
-          Main menu > Code > Preferences > Settings. Search for git
+          Main menu ⇒ Code ⇒ Preferences ⇒ Settings. Search for git
           <code>autofetch</code> and set it to true.
         </li>
       </ul>
@@ -134,10 +144,11 @@
       </div>
       <div>
         <code
-          >git config --global user.email
-          <span class="redacted">johndoe</span>@<span class="redacted"
-            >example</span
-          >.<span class="redacted">com</span></code
+          >git config --global user.email <span class="redacted">johndoe</span
+          ><span class="default-font">@</span
+          ><span class="redacted">example</span>.<span class="redacted"
+            >com</span
+          ></code
         >
       </div>
       <p>
@@ -239,10 +250,69 @@
         >
         and add your new public key.
       </p>
+
+      <h2>Vite</h2>
+      <p>
+        I always use <a href="https://vitejs.dev/">Vite</a> to manage my
+        projects. Vite takes care of <span class="highlight">a lot</span> of
+        <span class="highlight">annoying</span> details related to using 3rd
+        party libraries and to testing and releasing your code.
+      </p>
+      <h3>Install</h3>
+      <p>
+        You do <span class="highlight">not</span> need to install this on your
+        computer. You will automatically get these tools when you start a new
+        project through any of the methods described below.
+        <code>npm</code> takes care of installing and upgrading this tool.
+      </p>
+      <h3>Use</h3>
+      <p>
+        Type <code>npm run dev</code> to start a test server. (Sometimes VS Code
+        will do this for you automatically.) This will display instructions and
+        status on the standard output. Any time you modify a file, the dev
+        server will automatically rebuild (if required) and push the changes to
+        the browser.
+      </p>
+      <p>
+        Type <code>npm run dev</code> to pack your code up for a normal web
+        server. My template, below, is configured to work with
+        <a
+          href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"
+          >GitHub's free hosting</a
+        >.
+      </p>
       <h1>Try It!</h1>
+      <p>Here are several ways to create a project.</p>
       <h2>git clone</h2>
+      <p>
+        Use this method to start from an existing project. For example type
+        <code
+          >git clone
+          https://github.com/TradeIdeasPhilip/typescript-getting-started</code
+        >
+        to copy the source for this document to your computer. This will create
+        a directory called <code>typescript-getting-started</code> in the
+        current directory on your local machine. Start VS Code and open that
+        directory to start work.
+      </p>
+      <h3>Assignment #1</h3>
+      <p>
+        Clone this project. At the top, where it says ❝my name is,❞ fill in your
+        own name. Do it using TypeScript, not HTML. Keep the
+        <span class="highlight">highlight</span>
+        formatting. View your changes in development mode.
+      </p>
       <h2>degit template</h2>
-      <h2>npm create</h2>
+      <p style="color: darkorange">
+        Coming soon! This is the ideal way to start a new project.
+      </p>
+      <h2>npm create vite@latest</h2>
+      <p>
+        You can create a new project using Vite by typing
+        <code>npm create vite@latest</code>. This will use a template provided
+        by Vite. This will include instructions and examples to help you learn
+        Vite.
+      </p>
       <h1>About This Document</h1>
       <h2>Source Code</h2>
       <p>
@@ -262,16 +332,16 @@
         Need to add https://github.com/Rich-Harris/degit and a template to go
         with it!
       </p>
-      <p>Ignore the sub module stuff. It's done better now</p>
+      <p>Ignore the sub module stuff. It's done better now.</p>
       <h2>Fonts</h2>
       <p style="font-family: 'Peralta'">
         <a href="https://fonts.google.com/specimen/Peralta">Peralta</a> is
         readable and fun, perfect for headers.
       </p>
-      <p style="font-family: 'New Tegomin'">
+      <p>
         <a href="https://fonts.google.com/specimen/New+Tegomin">New Tegomin</a>
-        reminds me of Snoopy: It was a dark and stormy night...&nbsp; Mostly I
-        love it, but I'm not crazy about the "normal" quotes or the “smart”
+        reminds me of Snoopy. ❝It was a dark and stormy night...❞ Mostly I love
+        it, but I'm not crazy about the "normal" quotes or the “smart” [sic]
         quotes.
       </p>
       <p style="font-family: 'Redacted Script'">

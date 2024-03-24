@@ -3,13 +3,22 @@
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap");
 
-:root {
+:root,
+.default-font {
   font-family: "New Tegomin", monospace;
 }
 
 body {
   display: flex;
   justify-content: center;
+}
+.main-title {
+  font-family: "Peralta", fantasy;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 h1,
@@ -19,6 +28,21 @@ h4,
 h5,
 h6 {
   font-family: "Peralta", fantasy;
+}
+h1::before {
+  content: "⭑⭑⭑";
+  float: right;
+  padding-left: 0.25em;
+}
+h2::before {
+  content: "⭑⭑";
+  float: right;
+  padding-left: 0.25em;
+}
+h3::before {
+  content: "⭑";
+  float: right;
+  padding-left: 0.25em;
 }
 
 #testResult {
@@ -33,11 +57,30 @@ p {
   text-align: justify;
 }
 
+/**
+ * I made this color a little brighter than normal.
+ * Because .highlight uses an underline, and this uses an underline, I wanted to make a bigger and more obvious difference in the color.
+ */
+a:visited {
+  color: violet;
+}
+
+/**
+ * The New Tegomin font does not support bold, so I'm using this instead.
+ */
 .highlight {
   font-style: italic;
   text-decoration: underline;
+  text-shadow: 0 0 0.2em #ffe000;
 }
 
+/**
+ * This is a common style for code.
+ *
+ * Note that I'm keeping the "monospace" font-family for <code> elements.
+ * That font looks a little like New Tegomin, which I'm using for the bulk of my text,
+ * so I added the colors to make the difference more obvious.
+ */
 code {
   background-color: lightblue;
   border-radius: 0.25em;
@@ -46,20 +89,77 @@ code {
   color: blue;
 }
 
-svg {
+.redacted {
+  font-family: "Redacted Script", cursive;
+}
+
+.svg-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.svg-holder svg {
+  max-width: 35ch;
+  overflow: visible;
+  stroke-linecap: round;
+}
+
+svg text {
   font-size: 1px;
   fill: whitesmoke;
 }
-.addBorderDisabled {
-  stroke-width: 0.02px;
-  stroke: blue;
-}
 
-.noBorder {
+.no-border {
   stroke: none;
   stroke-width: 0;
 }
 
-.redacted {
-  font-family: "Redacted Script", cursive;
+.animated-color {
+  animation: animated-color 5s linear 0s infinite forwards;
+}
+
+@keyframes animated-color {
+  0% {
+    fill: hsl(0deg, 100%, 50%);
+  }
+  25% {
+    fill: hsl(90deg, 100%, 50%);
+  }
+  50% {
+    fill: hsl(180deg, 100%, 50%);
+  }
+  75% {
+    fill: hsl(270deg, 100%, 50%);
+  }
+  100% {
+    fill: hsl(360deg, 100%, 50%);
+  }
+}
+
+/*
+.text-container {
+  animation: border-width 3.14s cubic-bezier(0.83, 0, 1, 1) 0s infinite forwards;
+}
+@keyframes border-width {
+  0% {
+    stroke-width: 0.01px;
+  }
+  100% {
+    stroke-width: 0.95px;
+  }
+}
+*/
+
+.traditional-border {
+  stroke-width: 0.02px;
+  stroke: blue;
+}
+
+.thick-border {
+  stroke-width: 0.2px;
+  stroke: blue;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px blue, 0px 0px 2px blue;
 }
