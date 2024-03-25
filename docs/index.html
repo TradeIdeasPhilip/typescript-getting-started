@@ -69,10 +69,6 @@
       </p>
       <h1>My Tools</h1>
       <p>Install these once per computer.</p>
-      <p>
-        Some of these instructions look oddly specific; I've added detailed
-        notes where I've gotten stuck before.
-      </p>
       <h2>VS Code</h2>
       <p>
         There are a lot of useful extensions and such that work with VS Code.
@@ -203,32 +199,15 @@
       </p>
       <h3>Install</h3>
       <p>
-        This process changes frequently. Check Google for more recent
-        information.
+        This process changes frequently. Currently the internet says to follow
+        the directions on <a href="https://nodejs.org/en/">Node's homepage</a>.
       </p>
       <p>
-        I used
+        In the past I've used
         <a href="https://github.com/nvm-sh/nvm#installing-and-updating">NVM</a>
-        to install <code>npm</code> and Node. I started with the instructions on
-        the NVM website then I fixed a few things. This is what I did last time:
-      </p>
-      <p>
-        At the terminal type <code>cd ; touch .zshrc .profile</code>. The
-        install program should add things to both of these scripts. If you try
-        to do a build and it can't find a command, check these scripts.
-      </p>
-      <p>
-        At the terminal type
-        <code
-          >curl -o-
-          https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh |
-          bash</code
-        >
-        to install NVM.
-      </p>
-      <p>
-        Close that terminal window and start a new one. Type
-        <code>nvm install node</code> to install Node and npm.
+        and other tools to install <code>npm</code> and Node. The process used
+        to be complicated and bug-ridden. It looks like the standard installer
+        works better now.
       </p>
       <h2>TypeScript</h2>
       <p>
@@ -236,6 +215,7 @@
         safety features of C++/Java/C#, but without breaking any of the nice
         parts of JavaScript. I never use plain JavaScript if I can help it.
       </p>
+      <h3>Install</h3>
       <p>
         Open a terminal window. Make sure you are not inside an
         <code>npm</code> project. (Otherwise you will eventually get the
@@ -290,7 +270,11 @@
         the browser.
       </p>
       <p>
-        Type <code>npm run dev</code> to pack your code up for a normal web
+        By default the development web server only handles local requests. But
+        that's easy to change so you can test on your phone's browser.
+      </p>
+      <p>
+        Type <code>npm run build</code> to pack your code up for a normal web
         server. My template, below, is configured to work with
         <a
           href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"
