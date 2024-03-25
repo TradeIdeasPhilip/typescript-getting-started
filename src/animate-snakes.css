@@ -1,0 +1,56 @@
+.svg-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.svg-holder svg {
+  max-width: 35ch;
+  overflow: visible;
+  stroke-linecap: round;
+}
+
+svg text {
+  font-size: 1px;
+  fill: whitesmoke;
+}
+
+.no-border {
+  stroke: none;
+  stroke-width: 0;
+}
+
+.animated-color {
+  animation: animated-color 5s linear 0s infinite forwards;
+}
+
+@keyframes animated-color {
+  0% {
+    fill: hsl(0deg, 100%, 50%);
+  }
+  25% {
+    fill: hsl(90deg, 100%, 50%);
+  }
+  50% {
+    fill: hsl(180deg, 100%, 50%);
+  }
+  75% {
+    fill: hsl(270deg, 100%, 50%);
+  }
+  100% {
+    fill: hsl(360deg, 100%, 50%);
+  }
+}
+
+.traditional-border {
+  stroke-width: 0.02px;
+  stroke: blue;
+}
+
+.thick-border {
+  stroke-width: 0.2px;
+  stroke: blue;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px blue, 0px 0px 2px blue;
+}
