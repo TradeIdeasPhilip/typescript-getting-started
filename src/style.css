@@ -6,6 +6,7 @@
 :root,
 .default-font {
   font-family: "New Tegomin", monospace;
+  overflow-wrap: break-word;
 }
 
 body {
