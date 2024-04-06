@@ -28,6 +28,7 @@ h4,
 h5,
 h6 {
   font-family: "Peralta", fantasy;
+  cursor: url(./link.svg) 12 12, url(./link.svg), pointer;
 }
 h1::before {
   content: "¶ ¶ ¶";
