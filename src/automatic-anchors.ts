@@ -9,6 +9,7 @@ document.querySelectorAll("h1,h2,h3").forEach((element) => {
     // https://stackoverflow.com/a/2849800/971955
     return input
       .replaceAll("#", "")
+      .replaceAll("!", "") // ! is legal, but it seems to confuse markdown.
       .replaceAll("&", "and")
       .replaceAll(" ", "_");
   }
@@ -40,4 +41,3 @@ document.querySelectorAll("h1,h2,h3").forEach((element) => {
     window.location.hash = fragment;
   });
 });
-
