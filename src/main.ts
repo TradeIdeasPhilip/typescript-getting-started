@@ -7,6 +7,6 @@ import "./automatic-anchors";
 /**
  * Find the <span> element with id="testResult".
  */
-const testResultDiv = getById("testResult", HTMLSpanElement);
+const testResultSpan = getById("testResult", HTMLSpanElement);
 // Replace what was in that <span> with something better.
-testResultDiv.innerText = "😎 😀 😇 💯";
+testResultSpan.innerText = "😎 😀 😇 💯";
